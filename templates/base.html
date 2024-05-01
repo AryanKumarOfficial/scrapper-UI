@@ -4,8 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% block title %}{% endblock title %} | Ice Corner</title>
-    <!-- BOOTSTRAP CSS-->
+    <!-- TAILWIND CSS-->
     <script src="https://cdn.tailwindcss.com"></script>
+    {% comment %} CUSTOM CSS {% endcomment %}
+    {% block css %} {% endblock css %}
+    
   </head>
 
   <body>
