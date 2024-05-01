@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}{% endblock title %} | Ice Corner</title>
+    <!-- BOOTSTRAP CSS-->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body>
+    <!-- NAVBAR STARTS -->
+
+    <nav class="bg-gray-900">
+      <div class="max-w-[100vw] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-evenly h-16 content-center">
+          <div class="flex justify-between w-full">
+            <div class="logo h-full">
+              <a
+                href="/"
+                class="flex-shrink-0 flex content-center items-center text-white font-bold text-lg h-16"
+              >
+                Ice Corner
+              </a>
+            </div>
+            <div class="hidden md:block">
+              <div class="ml-10 flex items-baseline space-x-4 h-16">
+                <a
+                  href="/"
+                  class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium h-16 flex items-center"
+                  >Home</a
+                >
+                <a
+                  href="/about"
+                  class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium h-16 flex items-center"
+                  >About</a
+                >
+                <a
+                  href="/services"
+                  class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium h-16 flex items-center"
+                  >Services</a
+                >
+                <a
+                  href="/contact"
+                  class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium h-16 flex items-center"
+                  >Contact</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="-mr-2 flex md:hidden">
+            <button
+              type="button"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <!-- Heroicon name: menu -->
+              <svg
+                class="h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu, show/hide based on menu state. -->
+      <div class="md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="/"
+            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >Home</a
+          >
+          <a
+            href="/about"
+            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >About</a
+          >
+          <a
+            href="/services"
+            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >Services</a
+          >
+          <a
+            href="/contact"
+            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- NAVBAR ENDS -->
+
+    <!-- ALERTS -->
+    {% if messages %} {% for message in messages %}
+
+    <div
+      class="text-center alert alert-{{ message.tags }} alert-dismissible fade show my-0"
+      role="alert"
+      style="border-radius: 0px"
+    >
+      <strong class="text-capitalize">{{ message.tags }}!</strong> {{ message }}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    {% endfor %} {% endif %}
+
+    <!--BLOCK STARTS-->
+    {% block body %} {% endblock body %}
+    <!--BLOCK ENDS-->
+  </body>
+</html>
