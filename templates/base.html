@@ -1,3 +1,4 @@
+{% load static %} {%load compress %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,9 +7,7 @@
     <title>{% block title %}{% endblock title %} | Ice Corner</title>
     <!-- TAILWIND CSS-->
     <script src="https://cdn.tailwindcss.com"></script>
-    {% comment %} CUSTOM CSS {% endcomment %}
-    {% block css %} {% endblock css %}
-    
+    {% comment %} CUSTOM CSS {% endcomment %} {% block css %} {% endblock css %}
   </head>
 
   <body>
@@ -81,7 +80,7 @@
       </div>
 
       <!-- Mobile menu, show/hide based on menu state. -->
-      <div id='mobileView' class="md:hidden">
+      <div id="mobileView" class="md:hidden">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <a
             href="/"
@@ -132,14 +131,16 @@
     <!--BLOCK ENDS-->
 
     <script>
-      document.getElementById('mobileMenuButton').addEventListener('click', function() {
-        var mobileView = document.getElementById('mobileView');
-        if (mobileView.style.display === 'block') {
-          mobileView.style.display = 'none';
-        } else {
-          mobileView.style.display = 'block';
-        }
-      });
+      document
+        .getElementById("mobileMenuButton")
+        .addEventListener("click", function () {
+          var mobileView = document.getElementById("mobileView");
+          if (mobileView.style.display === "block") {
+            mobileView.style.display = "none";
+          } else {
+            mobileView.style.display = "block";
+          }
+        });
     </script>
   </body>
 </html>
