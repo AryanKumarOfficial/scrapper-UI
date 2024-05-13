@@ -1,20 +1,23 @@
 {% extends "base.html" %} {% block title %}Home{% endblock title %} {% block css %}
 <link rel="stylesheet" href="/static/css/404.css" />
-{% endblock css %} {% block body %}
+<link href="/static/css/index.css" rel="stylesheet" />
+{% endblock css %}
+
+{% block body %}
 
 <section class="flex flex-col justify-center items-center h-screen">
   <h1 class="text-center text-xl font-bold my-5">Welcome to web scrapper</h1>
   <p class="text-center">This is a simple tool built with Django</p>
-  <form action="/scrap" method="post" class="flex flex-col justify-center items-center my-5">
+  <form action="" method="post" class="flex flex-col justify-center items-center my-5">
     {% csrf_token %}
-    <input type="text" name="url" placeholder="Enter URL" class="border border-gray-300 p-2 rounded-md" />
+    {{form}}
     <button id="submitBtn" type="submit" class="bg-blue-500 text-white p-2 rounded-md mt-2">Scrap</button>
 </section>
 
 <section class="flex flex-col justify-center items-center h-screen">
   <h1 class="text-center text-xl font-bold my-5">Scrapped Data</h1>
   <div class="flex flex-col justify-center items-center">
-    <p class="text-center">No data available</p>
+    <p class="text-center">{{url}}</p>
   </div>
 </section>
 

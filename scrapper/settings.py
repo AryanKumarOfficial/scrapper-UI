@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ohbs)x7-n+so#yv8y2lhx0&9wusaksv^f1_)eyvoz$5gw9ad6e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     "*"
@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tailwind',
-    "compressor"
+    "compressor",
+    "home",
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,9 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# added manually
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
