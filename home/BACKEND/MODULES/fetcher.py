@@ -1,4 +1,4 @@
-from parser import fetchAndSaveToFile
+from home.BACKEND.MODULES.parser import fetchAndSaveToFile
 import time
 
 

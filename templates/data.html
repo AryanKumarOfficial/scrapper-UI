@@ -1,12 +1,9 @@
-{% extends "base.html" %} {% block title %}Data{% endblock title %}
- {% block body %}
-<section class="flex justify-center items-center h-screen">
-  <h1>Data</h1>
-  <p>Here is some data:</p>
-  <ul>
-    <li>One</li>
-    <li>Two</li>
-    <li>Three</li>
-  </ul>
+{% extends "base.html" %} {% block title %}Data{% endblock title %} {% block body %}
+<section class="flex justify-center items-center h-screen flex-col">
+  <h1 class="text-3xl font-bold">Data</h1>
+  <p class="text-xl font-semibold">Here is Scrapped data:</p>
+  <div class="flex flex-col justify-center items-center">
+    <p class="text-center text-blue-500">{{url}}</p>
+  </div>
 </section>
 {% endblock %}

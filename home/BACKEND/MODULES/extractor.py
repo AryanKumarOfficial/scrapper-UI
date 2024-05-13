@@ -1,7 +1,7 @@
 # folder_reader.py
 import os
 import logging
-from scrapper import scrapData
+from home.BACKEND.MODULES.scrapper import scrapData
 
 # Set up logging to print to the console
 logging.basicConfig(level=logging.INFO)
@@ -9,13 +9,13 @@ logger = logging.getLogger(__name__)
 words_collection = []
 
 
-def readFolder(folder, db_name, collection_name):
+def readFolder(folder):
     try:
         for root, _, files in os.walk(folder):
             for file in files:
                 file_path = os.path.join(root, file)
                 words_list, title, total_reviews = scrapData(
-                    file_path, db_name, collection_name)
+                    file_path)
                 logger.info(f"Processed file: {file_path}")
                 logger.info(f"Title: {title}, Total Reviews: {
                             total_reviews}, Words Count: {len(words_list)}")
