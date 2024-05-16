@@ -1,4 +1,5 @@
 import requests
+from home.BACKEND.MODULES.getlink import GetReviewsLink
 
 url = "https://api.scrapingant.com/v2/general" #proxy url
 
@@ -23,8 +24,9 @@ params = {
 
 def fetchAndSaveToFile(url,path):
     try:
-        print("Fetching data from ",url)
-        r= requests.get(url)
+        link = GetReviewsLink(url)
+        print("Fetching data from ",link)
+        r= requests.get(link)
         with open(path, "w",encoding="utf-8") as f:
                 # print(r.text)
                 f.write(r.text)
@@ -32,7 +34,7 @@ def fetchAndSaveToFile(url,path):
 
 
     except Exception as e:
-        print("Error fetching data from ",url)
+        print("Error fetching data from ",link)
         print(e)
         return
 

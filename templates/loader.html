@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %} Loading... {% endblock title %}
+{% block body %}
+<div class="overflow-x-hidden container min-h-screen h-fit flex flex-col justify-center items-center" style="background-color: #f3f4f6">
+  <h1 class="text-center text-5xl font-bold my-5">Loading...</h1>
+  <p class="text-center text-xl font-mono">
+    Please wait while we load the page for {{url}}
+  </p>
+</div>
+{% endblock body %}

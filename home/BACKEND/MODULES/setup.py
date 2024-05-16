@@ -7,18 +7,19 @@ from home.BACKEND.MODULES.fetcher import saveToFolder
 import os
 
 
-folder = "../data"
+folder = "./data"
 
 
 def setup(url):
     try:
         if not os.path.exists(folder):
             os.makedirs(folder)
-        saveToFolder("https://www.flipkart.com/apple-iphone-15-blue-128-gb/product-reviews/itmbf14ef54f645d?pid=MOBGTAGPAQNVFZZY&lid=LSTMOBGTAGPAQNVFZZYO7HQ2L&marketplace=FLIPKART&page=1", folder)
-        readFolder(folder)
+        saveToFolder("https://www.flipkart.com/apple-iphone-15-blue-128-gb/product-reviews/itmbf14ef54f645d?pid=MOBGTAGPAQNVFZZY&lid=LSTMOBGTAGPAQNVFZZYO7HQ2L&marketplace=FLIPKART", folder)
+        data = readFolder(folder)
         for root, _, files in os.walk(folder):
             for file in files:
                 os.remove(os.path.join(root, file))
+        return data
     except Exception as e:
         print("Error in setup")
         print(e)

@@ -11,9 +11,10 @@ class URLModel(models.Model):
     def __str__(self):
         return self.url
 
+
 class scrappedDataModel(models.Model):
     url = models.URLField(max_length=1000)
-    words_collection = models.TextField()
+    words_collection = models.JSONField()
     unique_words_count = models.IntegerField()
     total_words_count = models.IntegerField()
     title = models.CharField(max_length=1000)

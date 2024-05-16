@@ -2,11 +2,11 @@
 import os
 import logging
 from home.BACKEND.MODULES.scrapper import scrapData
+import numpy as np
 
 # Set up logging to print to the console
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-words_collection = []
 
 
 def readFolder(folder):
@@ -19,7 +19,7 @@ def readFolder(folder):
                 logger.info(f"Processed file: {file_path}")
                 logger.info(f"Title: {title}, Total Reviews: {
                             total_reviews}, Words Count: {len(words_list)}")
-                words_collection.extend(words_list)
+                words_collection = np.array(words_list).flatten()
 
         logger.info(f"Total words count: {len(words_collection)}")
         logger.info(f"Unique words count: {len(set(words_collection))}")

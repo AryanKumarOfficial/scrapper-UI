@@ -1,3 +1,4 @@
 # add .env folder to gitignore
 .env
 node_modules/
+data/
